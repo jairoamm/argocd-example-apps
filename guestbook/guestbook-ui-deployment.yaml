@@ -17,7 +17,7 @@ spec:
         nodepool: karpenter-x86-64
       tolerations:
       - key: architecture
-        operator: equal
+        operator: Equal
         value: x86-64
         effect: NoSchedule
       containers:
