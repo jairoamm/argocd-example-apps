@@ -15,6 +15,11 @@ spec:
     spec:
       nodeSelector:
         nodepool: karpenter-x86-64
+      tolerations:
+      - key: architecture
+        operator: equal
+        value: x86-64
+        effect: NoSchedule
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
         name: guestbook-ui
