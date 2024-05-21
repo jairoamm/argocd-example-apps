@@ -30,7 +30,6 @@ spec:
                   operator: In
                   values:
                   - spot
-    
       nodeSelector:
         nodepool: karpenter-x86-64
       tolerations:
