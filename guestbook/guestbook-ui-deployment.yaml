@@ -20,20 +20,20 @@ spec:
             - matchExpressions:
               - key: nodepool
                 operator: Equal
-                values: karpenter-x86-64
+                value: karpenter-x86-64
           preferredDuringSchedulingIgnoredDuringExecution:
           - weight: 0
             preference:
               matchExpressions:
               - key: karpenter.sh/capacity-type
                 operator: Equal 
-                values: on-demand
+                value: on-demand
           - weight: 100
             preference:
               matchExpressions:
               - key: karpenter.sh/capacity-type
                 operator: Equal
-                values: spot
+                value: spot
       tolerations:
       - key: architecture
         operator: Equal
