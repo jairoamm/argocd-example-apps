@@ -30,7 +30,7 @@ spec:
                 operator: In
                 values:
                 - on-demand
-          - weight: 50
+          - weight: 100
             preference:
               matchExpressions:
               - key: karpenter.sh/capacity-type
