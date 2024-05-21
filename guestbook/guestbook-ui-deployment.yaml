@@ -37,16 +37,6 @@ spec:
                 operator: In
                 values:
                 - spot
-      	topologySpreadConstraints:
-          - maxSkew: 2
-            topologyKey: karpenter.sh/capacity-type
-            whenUnsatisfiable: DoNotSchedule
-            labelSelector:
-               matchExpressions:
-                 - key: app
-                   operator: In
-                   values:
-                     - spread-app                       
       tolerations:
       - key: architecture
         operator: Equal
