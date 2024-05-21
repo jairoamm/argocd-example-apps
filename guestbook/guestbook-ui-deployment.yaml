@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: guestbook-ui
 spec:
-  replicas: 3
+  replicas: 60
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -19,21 +19,24 @@ spec:
             nodeSelectorTerms:
             - matchExpressions:
               - key: nodepool
-                operator: Equal
-                value: karpenter-x86-64
+                operator: In
+                values:
+                - karpenter-x86-64
           preferredDuringSchedulingIgnoredDuringExecution:
           - weight: 0
             preference:
               matchExpressions:
               - key: karpenter.sh/capacity-type
-                operator: Equal 
-                value: on-demand
-          - weight: 100
+                operator: In
+                values:
+                - on-demand
+          - weight: 50
             preference:
               matchExpressions:
               - key: karpenter.sh/capacity-type
-                operator: Equal
-                value: spot
+                operator: In
+                values:
+                - spot
       tolerations:
       - key: architecture
         operator: Equal
