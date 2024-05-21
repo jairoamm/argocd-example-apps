@@ -31,12 +31,12 @@ spec:
                 values:
                 - on-demand
           - weight: 50
-          preference:
-            matchExpressions:
-            - key: karpenter.sh/capacity-type
-              operator: In
-              values:
-              - spot
+            preference:
+              matchExpressions:
+              - key: karpenter.sh/capacity-type
+                operator: In
+                values:
+                - spot
       tolerations:
       - key: architecture
         operator: Equal
