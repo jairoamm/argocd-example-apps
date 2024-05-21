@@ -23,14 +23,14 @@ spec:
                 values:
                 - karpenter-x86-64
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 0
+          - weight: 5
             preference:
               matchExpressions:
               - key: karpenter.sh/capacity-type
                 operator: In
                 values:
                 - on-demand
-          - weight: 100
+          - weight: 95
             preference:
               matchExpressions:
               - key: karpenter.sh/capacity-type
