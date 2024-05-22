@@ -13,6 +13,13 @@ spec:
       labels:
         app: guestbook-ui
     spec:
+     topologySpreadConstraints:
+       - labelSelector:
+           matchLabels:
+             app: guestbook-ui
+         maxSkew: 1
+         topologyKey: karpenter.sh/capacity-type
+         whenUnsatisfiable: DoNotSchedule
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
