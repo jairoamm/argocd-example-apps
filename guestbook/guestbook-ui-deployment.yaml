@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: guestbook-ui
 spec:
-  replicas: 2
+  replicas: 20
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -17,7 +17,7 @@ spec:
        - labelSelector:
            matchLabels:
              app: guestbook-ui
-         maxSkew: 20
+         maxSkew: 1
          topologyKey: karpenter.sh/capacity-type
          whenUnsatisfiable: DoNotSchedule
       affinity:
