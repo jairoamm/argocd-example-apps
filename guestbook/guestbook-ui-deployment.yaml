@@ -44,11 +44,11 @@ spec:
                 operator: In
                 values:
                 - spot
-      tolerations:
-      - key: architecture
-        operator: Equal
-        value: x86-64
-        effect: NoSchedule
+#      tolerations:
+#      - key: architecture
+#        operator: Equal
+#        value: x86-64
+#        effect: NoSchedule
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
         name: guestbook-ui
